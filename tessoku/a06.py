@@ -1,5 +1,5 @@
 N, Q = map(int, input().split())
-A = list(map(int, input(split())))
+A = list(map(int, input().split()))
 # Caluculate the cumlative sum in advance
 accum = [0] * N
 accum[0] = A[0]
@@ -9,5 +9,5 @@ for _ in range(Q):
     L, R = map(int, input().split())
     L -= 1
     R -= 1
-    ans = accum[R+1] - accum[L]
+    ans = accum[R] - (accum[L-1] if L > 0 else 0)
     print(ans)
